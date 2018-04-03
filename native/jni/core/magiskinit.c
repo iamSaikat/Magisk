@@ -501,8 +501,8 @@ int main(int argc, char *argv[]) {
 			xmount(dev.path, "/system", "ext4", MS_RDONLY, NULL);
 		}
 
-		// Mount vendor
-		snprintf(partname, sizeof(partname), "vendor%s", cmd.slot);
+		// Mount vendor/oem
+		snprintf(partname, sizeof(partname), "oem%s", cmd.slot);
 		if (setup_block(&dev, partname) == 0)
 			xmount(dev.path, "/vendor", "ext4", MS_RDONLY, NULL);
 	}
